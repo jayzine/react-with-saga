@@ -40,5 +40,42 @@ You need to follow below steps to configure redux-saga in react app
 - You need to create `rootSagas.js` to combine all sagas function to make single entry point to run `sagaMiddleware`;
 - You need to create `combineReducer` to combine all reducer files.
 
+---
+
+# ACCESS STATE VALUES & DISPATCH ACTIONS
+- Create `Component.js` file.
+```
+import React from 'react';
+import { actionName } from 'PATH_NAME_OF_ACTION_FILE';
+
+const ComponentName = ({ actionName, counter }) => {
+    const fnName = () => {
+        actionName();
+    }
+
+    return (
+        <>
+        <button onClick={fnName}></button>
+        {counter}
+        </>
+    )
+}
+
+const mapStateToProps = (state) => ({
+    //this will return object with reducer name which you wil define in combine reducer file
+    // please check containers/User/userReducer.js
+    // please check reducer/index.js file and containers/User/UserReducer.js
+
+    counter: state.userReducer
+})
+
+const mapDispatchToProps = ({
+    // check containers/User/actions.js
+    actionName
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ComponentName)
+```
+
 - If you are new to `redux` please go through the documentation [REDUX TUTORIAL](https://react-redux.js.org/api/connect)
 - For Redux saga [REDUX SAGA TUTORIAL](https://redux-saga.js.org/docs/introduction/BeginnerTutorial/)
