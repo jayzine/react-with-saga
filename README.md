@@ -77,5 +77,23 @@ const mapDispatchToProps = ({
 export default connect(mapStateToProps, mapDispatchToProps)(ComponentName)
 ```
 
+# SAGA FUNCTION
+- saga contains generator functions. When a promise is run and yielded, the middleware suspends the saga until the promise is resolved. Once the promise is resolved the middleware resumes the saga, until the next yield statement is found. It is suspended again until its promise resolves.
+
+```
+import { call, put, takeLatest } from 'redux-saga/effects';
+function* sagaFunction() {
+    yield call(actionName())
+    yield put(actionName())
+}
+
+export default syncFunctionNameSagas() {
+    yield takeLatest(ACTION_TYPE, sagaFunction)
+}
+
+//Please check containers/Users/UsertSagas.js & rootSagas.js to get more clarification
+
+```
+
 - If you are new to `redux` please go through the documentation [REDUX TUTORIAL](https://react-redux.js.org/api/connect)
 - For Redux saga [REDUX SAGA TUTORIAL](https://redux-saga.js.org/docs/introduction/BeginnerTutorial/)
