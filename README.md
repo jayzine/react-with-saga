@@ -6,39 +6,39 @@ You need to follow below steps to configure redux-saga in react app
 - Start your app `npm start` to check react app.
 
 # Configure react saga
-    - open `index.js` file and add below line.
-        ```
-            import { Provider } from 'react-redux';
-            import { createStore, applyMiddleware } from 'redux';
-            import createSagaMiddleware from 'redux-saga';
+- open `index.js` file and add below line.
+```
+    import { Provider } from 'react-redux';
+    import { createStore, applyMiddleware } from 'redux';
+    import createSagaMiddleware from 'redux-saga';
 
-            import rootSaga from './rootSagas';
-            import reducer from './reducer';
-            .
-            .
-            .
-            .
+    import rootSaga from './rootSagas';
+    import reducer from './reducer';
+    .
+    .
+    .
+    .
 
-            // redux saga configuration
-            const sagaMiddleware = createSagaMiddleware();
-            const store = createStore(
-            reducer,
-            applyMiddleware(sagaMiddleware)
-            )
-            sagaMiddleware.run(rootSaga);
+    // redux saga configuration
+    const sagaMiddleware = createSagaMiddleware();
+    const store = createStore(
+    reducer,
+    applyMiddleware(sagaMiddleware)
+    )
+    sagaMiddleware.run(rootSaga);
 
-            .
-            .
-            root.render(
-            <React.StrictMode>
-                <Provider store={store}>
-                <App />
-                </Provider>
-            </React.StrictMode>
-            );
-        ```
-    - You need to create `rootSagas.js` to combine all sagas function to make single entry point to run `sagaMiddleware`;
-    - You need to create `combineReducer` to combine all reducer files.
+    .
+    .
+    root.render(
+    <React.StrictMode>
+        <Provider store={store}>
+        <App />
+        </Provider>
+    </React.StrictMode>
+    );
+```
+- You need to create `rootSagas.js` to combine all sagas function to make single entry point to run `sagaMiddleware`;
+- You need to create `combineReducer` to combine all reducer files.
 
-    If you are new to `redux` please go through the documentation [REDUX TUTORIAL](https://react-redux.js.org/api/connect)
-    For Redux saga [REDUX SAGA TUTORIAL](https://redux-saga.js.org/docs/introduction/BeginnerTutorial/)
+-If you are new to `redux` please go through the documentation [REDUX TUTORIAL](https://react-redux.js.org/api/connect)
+-For Redux saga [REDUX SAGA TUTORIAL](https://redux-saga.js.org/docs/introduction/BeginnerTutorial/)
