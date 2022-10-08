@@ -40,5 +40,5 @@ You need to follow below steps to configure redux-saga in react app
 - You need to create `rootSagas.js` to combine all sagas function to make single entry point to run `sagaMiddleware`;
 - You need to create `combineReducer` to combine all reducer files.
 
--If you are new to `redux` please go through the documentation [REDUX TUTORIAL](https://react-redux.js.org/api/connect)
--For Redux saga [REDUX SAGA TUTORIAL](https://redux-saga.js.org/docs/introduction/BeginnerTutorial/)
+- If you are new to `redux` please go through the documentation [REDUX TUTORIAL](https://react-redux.js.org/api/connect)
+- For Redux saga [REDUX SAGA TUTORIAL](https://redux-saga.js.org/docs/introduction/BeginnerTutorial/)
